@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "are_tabel_nutritional": { "type": "boolean" },
+    "coloana": { "type": "string", "enum": ["100g", "100ml", "portie", "lipsa"] },
+    "preparare": { "type": "string", "enum": ["ca_vandut", "preparat"] },
+    "portie_text": { "type": "string" },
+    "energie_kj": { "type": "string" },
+    "energie_kcal": { "type": "string" },
+    "grasimi": { "type": "string" },
+    "grasimi_saturate": { "type": "string" },
+    "glucide": { "type": "string" },
+    "zaharuri": { "type": "string" },
+    "fibre": { "type": "string" },
+    "proteine": { "type": "string" },
+    "sare": { "type": "string" },
+    "sodiu": { "type": "string" },
+    "zone_ilizibile": { "type": "array", "items": { "type": "string" } },
+    "tabel_complet": { "type": "boolean" }
+  },
+  "required": [
+    "are_tabel_nutritional",
+    "coloana",
+    "preparare",
+    "portie_text",
+    "energie_kj",
+    "energie_kcal",
+    "grasimi",
+    "grasimi_saturate",
+    "glucide",
+    "zaharuri",
+    "fibre",
+    "proteine",
+    "sare",
+    "sodiu",
+    "zone_ilizibile",
+    "tabel_complet"
+  ]
+}

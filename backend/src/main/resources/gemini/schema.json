@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "are_sectiune_ingrediente": { "type": "boolean" },
+    "limba": { "type": "string" },
+    "ingrediente_text": { "type": "string" },
+    "poate_contine": { "type": "string" },
+    "traducere_ro": { "type": "string" },
+    "alergeni_evidentiati": { "type": "array", "items": { "type": "string" } },
+    "zone_ilizibile": { "type": "array", "items": { "type": "string" } },
+    "text_complet": { "type": "boolean" }
+  },
+  "required": [
+    "are_sectiune_ingrediente",
+    "limba",
+    "ingrediente_text",
+    "poate_contine",
+    "traducere_ro",
+    "alergeni_evidentiati",
+    "zone_ilizibile",
+    "text_complet"
+  ]
+}
