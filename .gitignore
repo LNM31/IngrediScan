@@ -1,3 +1,5 @@
-docs/*
-fixtures/*
-tools/*
+.env
+**/.venv/
+tools/test-gemini/poze/*
+tools/test-gemini/poze_nutritie/*
+docs/archive/*

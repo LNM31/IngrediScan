@@ -1,0 +1,21 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "pringles",
+  "rulare": 1,
+  "poze": [
+    "24.heic"
+  ],
+  "secunde": 28.0,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "Cartofi deshidratați, ulei de [ilizibil] condiment cu gust de smântână și ceapă [ilizibil] disodic, inozinat disodic}, ceapă pudră, de[ilizibil] arome {lapte}, maltodextrină, zahăr, pudră de [ilizibil] glucoză praf, acidifianți {acid citric, acid malic}[ilizibil] răpiță, sare, colorant (annatto norbixină).",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [
+      "partea dreaptă a fiecărui rând este tăiată/ascunsă din cauza curburii ambalajului"
+    ],
+    "text_complet": false
+  }
+}

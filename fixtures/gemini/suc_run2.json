@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "suc",
+  "rulare": 2,
+  "poze": [
+    "15.heic"
+  ],
+  "secunde": 10.0,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "apă, zahăr, dioxid de carbon, suc de lime din concentrat (0,2%), extract de mentă (0,008%) și extract de hamei, aromă naturală, acidifiant: acid citric, corector de aciditate: citrați de sodiu, sare, citrați de potasiu, îndulcitor: glicozide steviolice din stevia, stabilizatori: gumă de acacia și esteri glicerici ai rășinilor din lemn, antioxidant: acid ascorbic, conservant: sorbat de potasiu.",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

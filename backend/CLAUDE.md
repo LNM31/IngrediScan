@@ -7,12 +7,14 @@ Spring Boot 4 (Spring Framework 7, Jackson 3) a schimbat nume de starteri și de
 ## Comenzi
 
 ```bash
-docker compose up -d        # Postgres 17 (docker-compose.yaml, citește .env)
-./mvnw spring-boot:run      # cere POSTGRES_DB / POSTGRES_USER / POSTGRES_PASSWORD în mediu
+docker compose up -d        # Postgres 17 (compose.yaml, citește .env)
+./mvnw spring-boot:run      # citește și el .env, prin spring.config.import
 ./mvnw test
 ```
 
-Config: `src/main/resources/application.properties` (datasource din variabile de mediu, `ddl-auto=update`). Model de `.env`: `example.env`. `.env` nu intră în git.
+Toate comenzile se rulează din `backend/`: calea `.env` din `spring.config.import` e relativă la folderul curent (atenție la working directory când pornești din IDE).
+
+Config: `src/main/resources/application.properties` (datasource din `POSTGRES_*`, fără valori implicite; `ddl-auto=update`). Model de `.env`: `example.env` (`POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `GEMINI_API_KEY`). `.env` nu intră în git.
 
 ## Structura
 
@@ -41,7 +43,7 @@ Prompturile și schemele Gemini: `src/main/resources/gemini/`. `prompt.txt` și 
 
 - `models.generate_content`, nu Interactions API.
 - `system_instruction` și `response_json_schema` ca parametri separați, thinking **low**, fără `temperature`.
-- Model `gemini-3.8-flash`. Cheia din variabilă de mediu, **fără valoare implicită**, niciodată în cod sau în git.
+- Model `gemini-3.8-flash`. Cheia din `GEMINI_API_KEY`, citită ca proprietate Spring (`gemini.api-key=${GEMINI_API_KEY}`) și dată **explicit** clientului (`.apiKey(...)`), nu lăsată SDK-ului să o caute singur. **Fără valoare implicită**, niciodată în cod sau în git.
 
 ## Ce nu intră în backend
 

@@ -1,0 +1,23 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "cereale",
+  "rulare": 2,
+  "poze": [
+    "6.heic"
+  ],
+  "secunde": 18.6,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "făină integrală de GRÂU (36,9 %), făină de orez (29,5 %), zahăr, ulei de floarea - soarelui, sirop de glucoză, oligofructoză, amidon din GRÂU, agent de afânare (carbonați de calciu), sare, pudră de căpșuni (0,1 %), maltodextrină, aromă naturală, emulsifiant (lecitine), colorant vegetal (concentrat de morcovi negri, coacăze negre, zahăr invertit), antioxidant (extract bogat în tocoferol), corector de aciditate (acid citric), substanță minerală (fier), vitamine (B3, B5, D, B6, B1, B2, B9).",
+    "poate_contine": "Poate conține LAPTE și FRUCTE CU COAJĂ LEMNOASĂ.",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [
+      "GRÂU",
+      "LAPTE",
+      "FRUCTE CU COAJĂ LEMNOASĂ"
+    ],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

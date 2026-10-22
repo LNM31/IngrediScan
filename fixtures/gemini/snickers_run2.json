@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "snickers",
+  "rulare": 2,
+  "poze": [
+    "16.heic"
+  ],
+  "secunde": 11.3,
+  "raspuns": {
+    "are_sectiune_ingrediente": false,
+    "limba": "",
+    "ingrediente_text": "",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [],
+    "text_complet": false
+  }
+}

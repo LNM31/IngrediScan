@@ -19,7 +19,7 @@ tools/     test-gemini/ (script Python de test pe prompturi)
 ```bash
 # backend (din backend/; .env după modelul example.env)
 docker compose up -d          # Postgres 17 pe 127.0.0.1:5432
-./mvnw spring-boot:run        # cere POSTGRES_DB / POSTGRES_USER / POSTGRES_PASSWORD în mediu
+./mvnw spring-boot:run        # citește backend/.env (spring.config.import), deci rulează din backend/
 ./mvnw test                   # contextLoads are nevoie de baza pornită
 
 # mobile (din mobile/)

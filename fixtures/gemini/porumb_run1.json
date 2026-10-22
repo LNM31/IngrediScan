@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "porumb",
+  "rulare": 1,
+  "poze": [
+    "4.heic"
+  ],
+  "secunde": 8.9,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "Porumb eco, apa, sare de mare, suc de lamaie eco.",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

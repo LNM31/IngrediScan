@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "chips",
+  "rulare": 1,
+  "poze": [
+    "19.heic"
+  ],
+  "secunde": 28.3,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "granule și fulgi din cartofi 34%, ulei vegetal de floarea soarelui, amidon din cartofi 23%, făină de grâu (gluten) 17%, sare, lapte praf degresat, lactoză (din lapte), zer pudră (lactoză și proteină din lapte), potențiatori de aromă: glutamat monosodic, inozinat și guanilat de sodiu, arome (soia), pătrunjel frunze, mărar 0,01%, acidifiant acid lactic.",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [
+      "grâu (gluten)",
+      "lactoză (din lapte)",
+      "lactoză și proteină din lapte",
+      "soia"
+    ],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

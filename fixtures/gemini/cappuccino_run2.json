@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "cappuccino",
+  "rulare": 2,
+  "poze": [
+    "11.heic"
+  ],
+  "secunde": 30.4,
+  "raspuns": {
+    "are_sectiune_ingrediente": false,
+    "limba": "",
+    "ingrediente_text": "",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [],
+    "text_complet": false
+  }
+}

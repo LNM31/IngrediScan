@@ -1,0 +1,21 @@
+{
+  "model": "gemini-3.8-flash",
+  "produs": "capp",
+  "rulare": 1,
+  "poze": [
+    "10.heic"
+  ],
+  "secunde": 125.2,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "pl",
+    "ingrediente_text": "Mleko o zawartości tłuszczu 2,9 % (75 %), kawa Starbucks®(19,3 %) (woda, ekstrakt kawy), cukier (4,5 %), inulina z cykorii, naturalne aromaty, kakao w proszku o obniżonej zawartości tłuszczu (0,1%), regulator kwasowości (węglany potasu), stabilizatory (guma gellan, karagen).",
+    "poate_contine": "",
+    "traducere_ro": "Lapte cu un conținut de grăsime de 2,9% (75%), cafea Starbucks® (19,3%) (apă, extract de cafea), zahăr (4,5%), inulină din cicoare, arome naturale, pudră de cacao cu conținut redus de grăsime (0,1%), regulator de aciditate (carbonați de potasiu), stabilizatori (gumă gellan, caragenan).",
+    "alergeni_evidentiati": [
+      "Mleko"
+    ],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}
