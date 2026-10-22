@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "IngrediScan",
+    "slug": "ingrediscan",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mobile",
+    "scheme": "ingrediscan",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"

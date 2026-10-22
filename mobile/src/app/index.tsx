@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "react-native";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text>Never has been to not be somehow</Text>
+      <Text>Empty</Text>
     </View>
   );
 }
