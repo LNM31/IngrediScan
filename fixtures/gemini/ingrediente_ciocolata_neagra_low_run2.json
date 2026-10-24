@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "ciocolata_neagra",
+  "rulare": 2,
+  "poze": [
+    "ciocolata_neagra.HEIC"
+  ],
+  "secunde": 6.2,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "Pastă de cacao, zahăr, migdale întregi prăjite 25%, unt de cacao, emulsifiant: lecitine, aromă de vanilie naturală. Substanță uscată de cacao: 55% minimum în ciocolata neagră.",
+    "poate_contine": "Poate conține urme de lapte, soia și alte fructe cu coajă lemnoasă.",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [
+      "migdale"
+    ],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

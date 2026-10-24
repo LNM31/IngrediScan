@@ -209,7 +209,7 @@ Request: `multipart/form-data`, câmpul `photos` repetat de 1-3 ori.
 | Regulă | Valoare inițială | Motiv |
 |---|---|---|
 | Format | `image/jpeg` | aplicația convertește (HEIC de pe iPhone inclus) |
-| Latura mare | ≤ 1600 px, redimensionată în aplicație | timpii Gemini; de ajustat după testul cu thinking low |
+| Latura mare | ≤ 1600 px, redimensionată în aplicație | timpii Gemini (5-40 s cu thinking medium) |
 | Mărime | ≤ 2 MB / poză, ≤ 6 MB / cerere | |
 
 Multipart în loc de base64 în JSON: base64 umflă pozele cu ~33%, iar Spring și `fetch` din React Native știu multipart direct.
@@ -249,7 +249,7 @@ Erori: `INVALID_PHOTOS`, `PAYLOAD_TOO_LARGE`, `UNSUPPORTED_MEDIA_TYPE`, `AI_BAD_
 **Timpi:**
 - backend → Gemini: timeout **60 s**, **fără reîncercări automate** (dublează timpul și consumă cota; singura reîncercare din flux e poza la partea lipsă, decisă de user).
 - aplicație → backend: timeout **70 s** (mai mare decât al backend-ului, ca aplicația să primească `AI_TIMEOUT`, nu o eroare de rețea), cu indicator de progres și buton de anulare.
-- Valorile se revizuiesc după măsurarea timpilor cu thinking low.
+- Confirmate de testul 2: cel mai lent caz măsurat a fost 37,6 s (poză grea, thinking medium).
 
 ### `POST /api/labels/nutrition` (rezervat)
 
@@ -267,4 +267,4 @@ Numele e rezervat pentru tabelul nutrițional (`prompt_nutritie.txt` + `schema_n
 ## Întrebări deschise
 
 - **EAN-8**: produsele mici au uneori coduri cu 8 cifre, pe care camera le poate citi. Acum contractul acceptă doar EAN-13 (decizia inițială). Se extinde doar dacă apare un produs real cu EAN-8 în test.
-- Limitele pentru poze și timeout-urile se ajustează după testul cu thinking low.
+- Limitele pentru poze și timeout-urile se ajustează dacă timpii reali din aplicație ies mult peste cei din testul 2.

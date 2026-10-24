@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": 719,
+  "produs": "ceva_biscuiti",
+  "rulare": 1,
+  "poze": [
+    "ceva_biscuiti.HEIC"
+  ],
+  "secunde": 9.6,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "13,5g",
+    "energie_kj": "1802kJ",
+    "energie_kcal": "430kcal",
+    "grasimi": "16g",
+    "grasimi_saturate": "1,5g",
+    "glucide": "68g",
+    "zaharuri": "<0,5g",
+    "fibre": "6,5g",
+    "proteine": "6,2g",
+    "sare": "0,88g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}

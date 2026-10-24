@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "biscuiti_milka",
+  "rulare": 1,
+  "poze": [
+    "biscuiti_milka.HEIC"
+  ],
+  "secunde": 5.8,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "37,5 g",
+    "energie_kj": "2137 kJ",
+    "energie_kcal": "510 kcal",
+    "grasimi": "25 g",
+    "grasimi_saturate": "11 g",
+    "glucide": "63 g",
+    "zaharuri": "35 g",
+    "fibre": "2,0 g",
+    "proteine": "7,1 g",
+    "sare": "0,62 g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "cappuccino",
+  "rulare": 1,
+  "poze": [
+    "11.heic"
+  ],
+  "secunde": 7.6,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "[ilizibil]",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [
+      "se vede doar o mică parte din coloana dreaptă cu ingredientele (SKŁADNIKI...), acoperită în mare parte de codul de bare și paie"
+    ],
+    "text_complet": false
+  }
+}

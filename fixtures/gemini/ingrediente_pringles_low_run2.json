@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "pringles",
+  "rulare": 2,
+  "poze": [
+    "24.heic"
+  ],
+  "secunde": 5.3,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "Cartofi deshidratați, ulei de floarea-soarelui, făină de grâu, făină de porumb, făină de orez, condiment cu gust de smântână și ceapă (amidon din grâu, potențiatori de aromă {glutamat monosodic, guanilat disodic, inozinat disodic}, ceapă pudră, dextroză, ulei de floarea-soarelui, sare, grăsime de nucă de cocos nehidrogenată, arome {lapte}, maltodextrină, zahăr, pudră de smântână {lapte}, smântână fermentată pudră {lapte}, sirop de glucoză praf, acidifianți {acid citric, acid lactic}, proteine din lapte, colorant {annatto norbixină}), emulsifiant (E471), maltodextrină, sare, colorant (annatto norbixină).",
+    "poate_contine": "Poate conține soia.",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [
+      "grâu",
+      "grâu",
+      "lapte",
+      "lapte",
+      "lapte",
+      "lapte",
+      "soia"
+    ],
+    "zone_ilizibile": [],
+    "text_complet": true
+  }
+}

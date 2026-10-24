@@ -84,7 +84,7 @@ Principiu: **skateboard → trotinetă → bicicletă → mașină**. La fiecare
 - Câmpurile de porție în OFF v3.6 (`serving_size`, `serving_quantity`, `product_quantity`) pe mai multe produse
 - Pot porni licența de la proiectul de laborator? (coordonatorul)
 - Termenii nivelului gratuit Gemini API pentru datele trimise
-- Timpii Gemini cu thinking low (și dacă 3.8 Flash rămâne pe nivelul gratuit)
+- Timpii Gemini cu thinking medium în aplicație (și dacă 3.6 Flash rămâne pe nivelul gratuit)
 - Testul de nutriție: alegerea coloanei (100 g / porție / preparat), valori cu „<”, tabel tăiat
 - Termenul de predare al laboratorului
 - Numele final al aplicației („IngrediScan” e provizoriu)

@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "low",
+  "tokeni_gandire": 956,
+  "produs": "cappuccino",
+  "rulare": 2,
+  "poze": [
+    "11.heic"
+  ],
+  "secunde": 10.8,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "pl",
+    "ingrediente_text": "[ilizibil]",
+    "poate_contine": "",
+    "traducere_ro": "[ilizibil]",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [
+      "lista de ingrediente din partea dreaptă este tăiată de marginea pozei"
+    ],
+    "text_complet": false
+  }
+}

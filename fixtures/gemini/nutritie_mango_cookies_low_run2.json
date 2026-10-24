@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "mango_cookies",
+  "rulare": 2,
+  "poze": [
+    "mango_cookies.HEIC"
+  ],
+  "secunde": 4.8,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "2 Stk/шт./ks (19 g/г)",
+    "energie_kj": "1667 kJ",
+    "energie_kcal": "396 kcal",
+    "grasimi": "12 g",
+    "grasimi_saturate": "7,2 g",
+    "glucide": "69 g",
+    "zaharuri": "53 g",
+    "fibre": "",
+    "proteine": "1,8 g",
+    "sare": "0,01 g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}

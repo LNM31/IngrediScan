@@ -1,0 +1,26 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "medium",
+  "tokeni_gandire": 6927,
+  "produs": "pringles",
+  "rulare": 2,
+  "poze": [
+    "24.heic"
+  ],
+  "secunde": 37.6,
+  "raspuns": {
+    "are_sectiune_ingrediente": true,
+    "limba": "ro",
+    "ingrediente_text": "Cartofi deshidratați, ulei de [ilizibil] condiment cu gust de smântână și ceapă (praf de smântână (lapte), ceapă pudră, dextroză, [ilizibil] disodic, inozinat disodic), ceapă pudră, dextroză, amidon modificat din porumb, arome (lapte), maltodextrină, zahăr, pudră de [ilizibil] glucoză praf, acidifianți (acid citric, acid lactic, acid malic), proteine din lapte), maltodextrină, emulsifiator (E471), ulei de rapiță, sare, colorant (annatto norbixină).",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [
+      "după «ulei de», la trecerea pe rândul următor (text tăiat de curbura ambalajului)",
+      "după «dextroză,», la trecerea pe rândul următor (text tăiat de curbura ambalajului)",
+      "după «pudră de», la trecerea pe rândul următor (text tăiat de curbura ambalajului)"
+    ],
+    "text_complet": false
+  }
+}

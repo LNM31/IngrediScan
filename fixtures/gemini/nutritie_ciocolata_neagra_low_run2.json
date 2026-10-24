@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": 446,
+  "produs": "ciocolata_neagra",
+  "rulare": 2,
+  "poze": [
+    "ciocolata_neagra.HEIC"
+  ],
+  "secunde": 6.8,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "",
+    "energie_kj": "2338 kJ",
+    "energie_kcal": "562 kcal",
+    "grasimi": "38 g",
+    "grasimi_saturate": "17 g",
+    "glucide": "41 g",
+    "zaharuri": "34 g",
+    "fibre": "7,0 g",
+    "proteine": "11 g",
+    "sare": "0,03 g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "ingrediente",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "snickers",
+  "rulare": 1,
+  "poze": [
+    "16.heic"
+  ],
+  "secunde": 9.8,
+  "raspuns": {
+    "are_sectiune_ingrediente": false,
+    "limba": "",
+    "ingrediente_text": "",
+    "poate_contine": "",
+    "traducere_ro": "",
+    "alergeni_evidentiati": [],
+    "zone_ilizibile": [],
+    "text_complet": false
+  }
+}

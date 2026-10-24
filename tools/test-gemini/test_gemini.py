@@ -23,10 +23,9 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-MODEL = "gemini-3.8-flash"
-THINKING = "low"  # low / medium / high
+MODEL = "gemini-3.6-flash"
+THINKING = "medium"  # low / medium / high
 RULARI = 2  # temperature e ignorat la 3.x, deci verificam consecventa rulând de 2 ori
-load_dotenv("../../../Dev/test-gemini/tomato.env")
 
 DIR = Path(__file__).parent
 RADACINA = DIR.parent.parent  # radacina repo-ului (tools/test-gemini -> ingrediscan)
@@ -36,6 +35,8 @@ MIME = {
     ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",
     ".webp": "image/webp", ".heic": "image/heic", ".heif": "image/heif",  # iPhone salveaza HEIC
 }
+
+load_dotenv(RADACINA / "backend" / ".env")
 
 TIPURI = {
     "ingrediente": {
@@ -98,7 +99,7 @@ def ruleaza(tip, doar=None):
             rez = {"model": MODEL, "tip": tip, "thinking": THINKING, "tokeni_gandire": gand,
                    "produs": d.name, "rulare": i, "poze": [p.name for p in poze],
                    "secunde": sec, "raspuns": out}
-            (REZULTATE / f"{tip}_{d.name}_{THINKING}_run{i}.json").write_text(
+            (REZULTATE / f"{tip}_{d.name}_{MODEL}_{THINKING}_run{i}.json").write_text(
                 json.dumps(rez, ensure_ascii=False, indent=2), encoding="utf-8")
             print(f"{d.name} #{i}: {sec}s, {gand} tokeni gandire | {cfg['rezumat'](out)}")
 

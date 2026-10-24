@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": 1585,
+  "produs": "malai",
+  "rulare": 1,
+  "poze": [
+    "malai.HEIC"
+  ],
+  "secunde": 12.9,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "",
+    "energie_kj": "1455 kJ",
+    "energie_kcal": "343 Kcal",
+    "grasimi": "1 g",
+    "grasimi_saturate": "0,3 g",
+    "glucide": "75 g",
+    "zaharuri": "0,3 g",
+    "fibre": "0,9 g",
+    "proteine": "8 g",
+    "sare": "0,06 g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}

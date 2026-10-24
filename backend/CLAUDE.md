@@ -44,8 +44,8 @@ Prompturile și schemele Gemini: `src/main/resources/gemini/`. `prompt.txt` și 
 ## Gemini
 
 - `models.generate_content`, nu Interactions API.
-- `system_instruction` și `response_json_schema` ca parametri separați, thinking **low**, fără `temperature`.
-- Model `gemini-3.8-flash`. Cheia din `GEMINI_API_KEY`, citită ca proprietate Spring (`gemini.api-key=${GEMINI_API_KEY}`) și dată **explicit** clientului (`.apiKey(...)`), nu lăsată SDK-ului să o caute singur. **Fără valoare implicită**, niciodată în cod sau în git.
+- `system_instruction` și `response_json_schema` ca parametri separați, thinking **medium**, fără `temperature`.
+- Model `gemini-3.6-flash`. Modelul și nivelul de thinking sunt proprietăți Spring (`gemini.model`, `gemini.thinking-level`), nu constante în cod, ca să se poată schimba fără cod. Cheia din `GEMINI_API_KEY`, citită ca proprietate Spring (`gemini.api-key=${GEMINI_API_KEY}`) și dată **explicit** clientului (`.apiKey(...)`), nu lăsată SDK-ului să o caute singur. **Fără valoare implicită**, niciodată în cod sau în git.
 
 ## Ce nu intră în backend
 

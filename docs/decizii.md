@@ -15,9 +15,9 @@ Orice decizie nouă luată pe parcurs se notează aici, cu data și motivul. Ce 
 | Backend (laborator) | **Spring Boot**: CRUD pe `Product` + endpoint care trimite pozele la Gemini | cerința de CRUD; cheia API stă pe server |
 | Arhitectura datelor | fiecare sursă are un adaptor care produce același tip `NormalizedProduct` | surse multiple, părți opționale |
 | Fallback | poză + Gemini, o singură reîncercare, apoi verdict „necunoscut” | fără bucle infinite |
-| AI | **Gemini 3.8 Flash** (nivel gratuit), nu model local | |
+| AI | ~~Gemini 3.8 Flash~~ → **Gemini 3.6 Flash** (nivel gratuit), nu model local | schimbat pe 2026-10-24, vezi mai jos |
 | Apelul la Gemini | `models.generate_content`, **nu** Interactions API | Interactions e beta, a avut breaking changes în mai 2026 |
-| Configurare Gemini | `system_instruction` și `response_json_schema` separate; thinking **low**; fără `temperature` | `temperature` e ignorat la 3.x; timpii cu medium sunt prea mari |
+| Configurare Gemini | `system_instruction` și `response_json_schema` separate; thinking ~~low~~ → **medium**; fără `temperature` | `temperature` e ignorat la 3.x; thinking schimbat pe 2026-10-24, vezi mai jos |
 | Etichetă în limbă străină | originalul în `ingrediente_text`, traducerea în `traducere_ro`; pe traducere roșu / galben, **niciodată verde** | un alergen pierdut la traducere e mai grav decât o alarmă falsă |
 | Nutriție din poză | prompt, schemă și endpoint separate de ingrediente | se poate scoate fără să atingă ingredientele |
 | Afecțiuni | **modulare**: rânduri noi în tabelul de reguli, motorul neschimbat | |
@@ -63,13 +63,23 @@ Detaliile sunt în `api.md`; aici doar ce s-a decis și de ce.
 - **Backend-ul redenumește cheile Gemini în engleză**; valorile trec neatinse (nu se traduce, nu se interpretează). Schema Gemini rămâne internă backend-ului, deci o schimbare de prompt nu atinge aplicația. Respins: aplicația să primească schema în română.
 - **Erori: `ProblemDetail` (RFC 9457) + câmpul `code`**, dintr-un singur `@RestControllerAdvice`. Aplicația decide doar după `code` și nu afișează `detail`.
 - **Token în `X-Api-Token`**; nu e secret (ajunge în bundle), doar ține deoparte traficul întâmplător.
-- **Timpi: backend → Gemini 60 s, aplicație → backend 70 s, fără reîncercări automate.** Valori de pornire, de revizuit după măsurarea cu thinking low.
+- **Timpi: backend → Gemini 60 s, aplicație → backend 70 s, fără reîncercări automate.** Confirmate de testul 2 (cel mai lent caz: 37,6 s).
 - **Fără endpoint de listare** (niciun ecran nu-l folosește). **Doar EAN-13** (EAN-8 rămâne întrebare deschisă).
 - **Forma lui `nutrition` e provizorie**: valorile sunt numere la 100 g / 100 ml, interpretate de adaptorul din aplicație.
 
 ### 2026-10-24: Testul de nutriție se amână
 
 Nu blochează lab-ul obligatoriu (alergeni + dietă), iar nutriția din OFF vine deja numerică. Se face înainte de `POST /api/labels/nutrition` și de modulele de diabet / hipertensiune; poate schimba forma lui `nutrition`.
+
+**Actualizare (aceeași zi):** tabelele simple au fost testate (6 produse, corecte și consistente); cazurile riscante (doar porție, preparat, tabel tăiat, sodiu) rămân pentru task-ul de nutriție.
+
+### 2026-10-24: Gemini 3.6 Flash cu thinking medium
+
+- **Model: `gemini-3.6-flash`**, în loc de `gemini-3.8-flash`. 3.8 a fost lent (21-90 s pe Pringles, 69 s pe un tabel nutrițional) și a dat „high demand” (supraîncărcare). 3.6 răspunde în 5-20 s pe etichete obișnuite.
+- **Thinking: medium**, în loc de low. Cu low, 3.6 a raportat lista tăiată de la Pringles drept completă, fără `[ilizibil]`, cu text inventat („acid lactic” unde pe etichetă se vede „acid ma...”). Cu medium a marcat corect `[ilizibil]` și `text_complet: false`. Costul: 37,6 s pe poza grea, 19,6 s pe lista în poloneză.
+- Respins: **3.6 + low** (inventează pe pozele grele, iar aplicația nu are cum să detecteze), **3.8** (lent, nedisponibil la nevoie).
+- Modelul și thinking-ul sunt **proprietăți de configurare** în backend, ca să se poată schimba fără cod dacă se schimbă disponibilitatea.
+- Rămâne de verificat: a doua rulare pe Pringles cu medium și timpii cu medium pe etichete obișnuite, la task-ul de backend pentru `/api/labels/ingredients`. Promptul de ingrediente rămâne neschimbat.
 
 ## Diferențe față de `specificatie-aplicatie.md`
 

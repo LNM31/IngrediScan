@@ -1,0 +1,30 @@
+{
+  "model": "gemini-3.6-flash",
+  "tip": "nutritie",
+  "thinking": "low",
+  "tokeni_gandire": null,
+  "produs": "5togo",
+  "rulare": 1,
+  "poze": [
+    "5togo.HEIC"
+  ],
+  "secunde": 7.0,
+  "raspuns": {
+    "are_tabel_nutritional": true,
+    "coloana": "100g",
+    "preparare": "ca_vandut",
+    "portie_text": "",
+    "energie_kj": "240 kJ",
+    "energie_kcal": "57 kcal",
+    "grasimi": "1,3 g",
+    "grasimi_saturate": "0,9 g",
+    "glucide": "8,5 g",
+    "zaharuri": "7,9 g",
+    "fibre": "",
+    "proteine": "2,8 g",
+    "sare": "1,6 g",
+    "sodiu": "",
+    "zone_ilizibile": [],
+    "tabel_complet": true
+  }
+}
