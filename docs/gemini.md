@@ -25,6 +25,8 @@ Stau într-un singur loc: `backend/src/main/resources/gemini/`.
 
 Ingredientele și nutriția au prompt, schemă și endpoint separate.
 
+Schemele (cu chei în română) sunt interne backend-ului. Backend-ul redenumește cheile în engleză înainte să răspundă aplicației (`ingrediente_text` → `ingredientsText` etc.; tabelul complet e în [api.md](api.md#post-apilabelsingredients)). Conținutul nu se traduce și nu se interpretează: textul rămâne în limba etichetei.
+
 ### Schema ingrediente
 
 Ordinea contează: `text_complet` e ultimul, ca modelul să judece după ce a transcris.
@@ -83,7 +85,7 @@ Toate valorile vin ca **text** exact de pe etichetă („<0,5 g”). Parsarea, c
 ### Nefăcut
 
 - Pringles cu 2 poze (combinarea pozelor), testul pe cod de bare, timpii cu thinking low (opționale).
-- **Testul de nutriție**: se face **înainte** de modulele de diabet / hipertensiune. Cifrele greșesc altfel decât cuvintele („5 g” în loc de „0,5 g” arată credibil), iar alegerea coloanei e o logică nouă. De urmărit: alegerea coloanei (100 g / porție / preparat), valori cu „<”, tabel tăiat.
+- **Testul de nutriție**: amânat (nu blochează lab-ul obligatoriu), dar se face **înainte** de `POST /api/labels/nutrition` și de modulele de diabet / hipertensiune. Rezultatul poate schimba forma lui `nutrition` din [api.md](api.md). Cifrele greșesc altfel decât cuvintele („5 g” în loc de „0,5 g” arată credibil), iar alegerea coloanei e o logică nouă. De urmărit: alegerea coloanei (100 g / porție / preparat), valori cu „<”, tabel tăiat.
 
 ## Întrebări deschise
 

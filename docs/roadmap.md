@@ -62,21 +62,20 @@ Userul apasă „am consumat”, aplicația adună zahărul / sarea pe zi și av
 
 Principiu: **skateboard → trotinetă → bicicletă → mașină**. La fiecare pas există ceva care merge cap-coadă.
 
-0. **Validare**: ✅ Open Food Facts (19 produse) · ✅ test Gemini pe ingrediente · ⏳ test Gemini pe nutriție (înainte de modulele de afecțiuni)
+0. **Validare**: ✅ Open Food Facts (19 produse) · ✅ test Gemini pe ingrediente · ⏳ test Gemini pe nutriție (amânat; înainte de `/api/labels/nutrition` și de modulele de afecțiuni)
 1. **Cerințe**: user stories, prioritizare (Must / Should / Could / Won't), diagrama de use case
-2. **Design**: ✅ diagrama de flux (v5) · ✅ wireframe rezultat · ⏳ wireframe confirmare text AI · modelul de date · ⏳ contractul API (`docs/api.md`)
-3. **Setup**: ✅ repo + structura de foldere · ✅ Expo și Spring Boot generate · ✅ `CLAUDE.md` + documentele din `docs/` · ⏳ Postgres în Docker pornit și backend-ul conectat · ⏳ Expo rulat pe iPhone
+2. **Design**: ✅ diagrama de flux (v5) · ✅ wireframe rezultat · ⏳ wireframe confirmare text AI · ✅ modelul de date (`Product` în `api.md`) · ✅ contractul API (`docs/api.md`)
+3. **Setup**: ✅ repo + structura de foldere · ✅ Expo și Spring Boot generate · ✅ `CLAUDE.md` + documentele din `docs/` · ✅ Postgres în Docker pornit și backend-ul conectat · ✅ Expo rulat pe iPhone
 4. **Implementare pe felii**: cod de bare → OFF → nume pe ecran; profil + discriminator; backend CRUD; poză + Gemini; istoric; UI final; module de afecțiuni
 5. **Testare**: teste unitare pe `evaluate` și pe adaptoare (pe fixtures)
 6. **Finalizare**: diagrame actualizate (copia curată a diagramei de flux), capturi, demo pregătit (produse testate, istoric offline, hotspot)
 
 ### Pași următori, în ordine
 
-1. **Contractul API (`docs/api.md`)**: fiecare endpoint cu JSON-ul exact de request și răspuns, codurile de eroare, header-ul de token, numele câmpurilor în engleză. E sursa de adevăr pentru sesiunile de mobile și de backend, care nu se văd între ele.
+1. ✅ **Contractul API** (`docs/api.md`).
 2. **Task-urile** în `docs/tasks/`: primele 3-4 detaliate, restul câte un rând.
-3. **Postgres în Docker** pornit și backend-ul conectat.
-4. **Primul task de cod**: Expo pe iPhone, camera → codul de bare pe ecran.
-5. Apoi: cod → OFF → nume pe ecran (adaptor testat pe fixtures) → backend CRUD → profil + discriminator → fluxul cu poză → istoric → UI final → module de afecțiuni.
+3. **Primul task de cod**: Expo pe iPhone, camera → codul de bare pe ecran.
+4. Apoi: cod → OFF → nume pe ecran (adaptor testat pe fixtures) → backend CRUD → profil + discriminator → fluxul cu poză → istoric → UI final → module de afecțiuni.
 
 În paralel: wireframe-ul pentru confirmarea textului citit de AI, actualizarea `specificatie-aplicatie.md`.
 

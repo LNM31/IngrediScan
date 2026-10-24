@@ -33,7 +33,9 @@ Prompturile și schemele Gemini: `src/main/resources/gemini/`. `prompt.txt` și 
 
 - **DTO-uri ca `record`**. Entitatea nu iese direct din controller.
 - **Lombok doar pe entitate**: `@Getter`, `@Setter`, `@NoArgsConstructor`. **Niciodată `@Data`.**
-- **Un singur `@RestControllerAdvice`**, cu același format de eroare pentru toate endpoint-urile (formatul e în `docs/api.md`).
+- **Un singur `@RestControllerAdvice`**, care întoarce `ProblemDetail` (RFC 9457) cu câmpul suplimentar `code`, pentru toate erorile. Lista de coduri e în `docs/api.md`; fără stack trace, fără mesajul brut de la Gemini.
+- Token: header-ul `X-Api-Token`, comparat cu `API_TOKEN` din `.env`, pe `/api/**`; lipsă sau greșit → `401 UNAUTHORIZED`.
+- Endpoint-ul de etichetă redenumește cheile din schema Gemini în engleză (record DTO); nu interpretează conținutul (nu scoate titlul, nu decide dacă textul e complet).
 - Validare cu Bean Validation: cod EAN-13 valid, text ingrediente negol.
 - Token simplu în header între aplicație și backend.
 - Dependențe: Spring Web MVC, Spring Data JPA, Validation, PostgreSQL Driver, DevTools, Lombok. **Fără** MapStruct, Spring Security, H2. Mai târziu, adăugate manual: springdoc-openapi, SDK-ul Gemini pentru Java.

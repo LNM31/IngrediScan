@@ -37,7 +37,8 @@ Folderele apar când e nevoie de ele, nu dinainte. Alias de import: `@/` → `sr
 - **Open Food Facts se apelează direct** din aplicație, doar API v3.6, cu `User-Agent`, parsare JSON în `try/catch` (vezi `docs/open-food-facts.md`).
 - Codurile tastate se validează (lungime + cifră de control EAN-13).
 - Pozele se redimensionează și se comprimă înainte de trimiterea la backend.
-- **Cheia Gemini nu apare niciodată în aplicație.** Aplicația vorbește doar cu backend-ul nostru (token simplu în header).
+- **Cheia Gemini nu apare niciodată în aplicație.** Aplicația vorbește doar cu backend-ul nostru: `EXPO_PUBLIC_API_URL` + header-ul `X-Api-Token` cu `EXPO_PUBLIC_API_TOKEN` (din `mobile/.env`, care nu intră în git). Token-ul ajunge în bundle, deci nu e secret.
+- Erorile de la backend se tratează **după `code`** din răspuns; `detail` nu se afișează userului.
 - Verdictul pe ecran: culoare + iconiță + text, niciodată doar culoare.
 - Textul citit de AI se arată userului, editabil, cu `[ilizibil]` evidențiat, și se confirmă înainte de `POST`.
 - Contractul cu backend-ul e în `docs/api.md`; nu inventa câmpuri.

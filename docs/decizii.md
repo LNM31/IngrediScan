@@ -53,6 +53,24 @@ Orice decizie nouă luată pe parcurs se notează aici, cu data și motivul. Ce 
 
 - În git: `docs/` (fără `docs/archive/`), `fixtures/`, `tools/`. Ignorate: `.env`, `**/.venv/`, pozele de test din `tools/test-gemini/poze*/`, `docs/archive/`.
 
+### 2026-10-24: Contractul API
+
+Detaliile sunt în `api.md`; aici doar ce s-a decis și de ce.
+
+- **`Product`**: `source` unic devine `ingredientsSource` (`ai` / `user`) + `nutritionSource` (`off` / `ai` / `user`), pentru că un produs salvat după poză are de obicei ingredientele de la AI și nutriția din OFF. `confirmed` dispare (la laborator se salvează doar după confirmare, deci ar fi mereu `true`). Apar `quantity` și `imageUrl`, doar pentru afișare (la a doua scanare produsul vine din baza noastră, nu din OFF).
+- **`ingredientsText` cu `[ilizibil]` e respins** la `POST` / `PUT`: baza proprie se verifică înaintea OFF, deci conține doar liste complete.
+- **Endpoint de etichetă: `POST /api/labels/ingredients`**, `multipart/form-data`, 1-3 poze JPEG (≤ 1600 px, ≤ 2 MB / poză). Respins: base64 în JSON (+33% mărime). `/api/labels/nutrition` doar rezervat.
+- **Backend-ul redenumește cheile Gemini în engleză**; valorile trec neatinse (nu se traduce, nu se interpretează). Schema Gemini rămâne internă backend-ului, deci o schimbare de prompt nu atinge aplicația. Respins: aplicația să primească schema în română.
+- **Erori: `ProblemDetail` (RFC 9457) + câmpul `code`**, dintr-un singur `@RestControllerAdvice`. Aplicația decide doar după `code` și nu afișează `detail`.
+- **Token în `X-Api-Token`**; nu e secret (ajunge în bundle), doar ține deoparte traficul întâmplător.
+- **Timpi: backend → Gemini 60 s, aplicație → backend 70 s, fără reîncercări automate.** Valori de pornire, de revizuit după măsurarea cu thinking low.
+- **Fără endpoint de listare** (niciun ecran nu-l folosește). **Doar EAN-13** (EAN-8 rămâne întrebare deschisă).
+- **Forma lui `nutrition` e provizorie**: valorile sunt numere la 100 g / 100 ml, interpretate de adaptorul din aplicație.
+
+### 2026-10-24: Testul de nutriție se amână
+
+Nu blochează lab-ul obligatoriu (alergeni + dietă), iar nutriția din OFF vine deja numerică. Se face înainte de `POST /api/labels/nutrition` și de modulele de diabet / hipertensiune; poate schimba forma lui `nutrition`.
+
 ## Diferențe față de `specificatie-aplicatie.md`
 
 Specificația e anterioară deciziilor de mai sus. Unde diferă, câștigă acest fișier:

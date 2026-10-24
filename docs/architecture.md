@@ -49,9 +49,9 @@ Fiecare operație are un motiv real în aplicație:
 | Update | `PUT /api/products/{code}` | userul corectează o listă greșită |
 | Delete | `DELETE /api/products/{code}` | userul șterge un produs adăugat greșit |
 
-Contractul exact (JSON request / răspuns, coduri de eroare, header-ul de token) se fixează în `docs/api.md`, care e sursa de adevăr pentru ambele părți. Numele endpoint-ului de etichetă (în diagramă `/api/eticheta`) se decide acolo.
+Contractul exact (JSON request / răspuns, coduri de eroare, header-ul de token) e în [api.md](api.md), care e sursa de adevăr pentru ambele părți. Endpoint-ul de etichetă e `POST /api/labels/ingredients`.
 
-**Entitatea `Product`**: cod de bare, nume, brand, text ingrediente, limbă, nutriție, sursă (`ai` / `off` / `user`), confirmat de user, data adăugării.
+**Entitatea `Product`**: cod de bare, nume, brand, cantitate, URL poză (din OFF, doar pentru afișare), text ingrediente, „poate conține”, limbă, traducere în română, sursa ingredientelor (`ai` / `user`), nutriție (opțională) și sursa ei (`off` / `ai` / `user`), datele de creare și modificare. Câmpurile exacte sunt în [api.md](api.md#resursa-product).
 
 ### Denumiri
 
@@ -64,9 +64,9 @@ Codul e în engleză; discuțiile vechi și diagrama folosesc nume românești:
 | `evalueaza` | `evaluate` |
 | `constatari` | `findings` |
 | `/api/produse` | `/api/products` |
-| `/api/eticheta` | de decis în `docs/api.md` |
+| `/api/eticheta` | `/api/labels/ingredients` |
 
-Câmpurile din schemele Gemini rămân în română (`ingrediente_text`, `text_complet` etc.), pentru că prompturile sunt înghețate (vezi [gemini.md](gemini.md)); adaptorul le mapează în `NormalizedProduct`.
+Câmpurile din schemele Gemini rămân în română (`ingrediente_text`, `text_complet` etc.), pentru că prompturile sunt înghețate (vezi [gemini.md](gemini.md)). Schema e un detaliu intern al backend-ului: backend-ul redenumește cheile în engleză (doar numele, valorile trec neatinse), iar aplicația primește contractul din [api.md](api.md) și îl transformă în `NormalizedProduct`.
 
 ### `NormalizedProduct`
 
