@@ -73,7 +73,7 @@ Principiu: **skateboard → trotinetă → bicicletă → mașină**. La fiecare
 ### Pași următori, în ordine
 
 1. ✅ **Contractul API** (`docs/api.md`).
-2. **Task-urile** în `docs/tasks/`: primele 3-4 detaliate, restul câte un rând.
+2. ✅ **Task-urile** în `docs/tasks/`: 01-04 detaliate, restul câte un rând (vezi `docs/tasks/README.md`).
 3. **Primul task de cod**: Expo pe iPhone, camera → codul de bare pe ecran.
 4. Apoi: cod → OFF → nume pe ecran (adaptor testat pe fixtures) → backend CRUD → profil + discriminator → fluxul cu poză → istoric → UI final → module de afecțiuni.
 

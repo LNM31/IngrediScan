@@ -78,6 +78,8 @@ La `VALIDATION_FAILED` apare și `errors`:
 | `AI_BAD_RESPONSE` | 502 | Gemini a răspuns, dar JSON-ul nu respectă schema |
 | `AI_UNAVAILABLE` | 503 | Gemini picat, limită de cereri / cotă depășită |
 | `AI_TIMEOUT` | 504 | Gemini nu a răspuns în timp |
+| `NOT_FOUND` | 404 | ruta nu există (ex. `/api/produse`) |
+| `METHOD_NOT_ALLOWED` | 405 | metodă nesuportată pe o rută existentă (ex. `PATCH /api/products/{barcode}`) |
 | `INTERNAL_ERROR` | 500 | orice altceva |
 
 Pentru aplicație, **orice 5xx de la `/labels` înseamnă „Gemini available? → No”** din diagramă (→ „Unknown, check the label”). Codurile separate există pentru log-uri și pentru un mesaj mai precis.

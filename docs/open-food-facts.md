@@ -58,7 +58,7 @@ Răspunsurile brute sunt în `fixtures/off/products.json`. Se folosesc ca teste 
 ### Lecții → reguli
 
 1. **`allergens_tags` gol ≠ fără alergeni** (Snickers). Lista contează doar cu `en:ingredients-completed`.
-2. **Nici „complet” nu e suficient**: Cappuccino Starbucks are text în germană, lapte nedetectat. Text în altă limbă decât ro / en → nesigur. `lang` nu e de încredere.
+2. **Nici „complet” nu e suficient**: Cappuccino Starbucks are text în germană, lapte nedetectat. Text în altă limbă decât ro / en → nesigur. `lang` nu e de încredere (Cappuccino: `lang: en`, text german; Sour Cream & Onion: `lang: ro`, text englez). Deci: doar `ingredients_text_ro` contează ca `ro`; `ingredients_text` are limba `unknown` (vezi `decizii.md`, 2026-10-24).
 3. **Tag-urile se filtrează pe listă albă** (`en:none`, `ro:Ovaz`, caractere de control la Pringles). Alergen și în alergeni, și în urme → câștigă alergenul.
 4. **Doar nutrienții de bază, preferabil din `packaging`** (estimări absurde, zerouri puse de contributori, `fiber` lipsește uneori).
 5. **Fallback pe bucăți**: dacă lipsesc doar ingredientele, nutriția din OFF se păstrează.

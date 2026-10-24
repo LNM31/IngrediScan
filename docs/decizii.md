@@ -73,6 +73,14 @@ Nu blochează lab-ul obligatoriu (alergeni + dietă), iar nutriția din OFF vine
 
 **Actualizare (aceeași zi):** tabelele simple au fost testate (6 produse, corecte și consistente); cazurile riscante (doar porție, preparat, tabel tăiat, sodiu) rămân pentru task-ul de nutriție.
 
+### 2026-10-24: Decizii din planificarea task-urilor 01-04
+
+- **Limba textului din OFF**: doar `ingredients_text_ro` e considerat `ro`. Textul din `ingredients_text` primește limba `unknown`, pentru că `lang` minte (fixtures: Cappuccino `lang: en` cu text în germană, Sour Cream & Onion `lang: ro` cu text în engleză). Pe limbă `unknown` verdictul nu poate fi verde, ca la textul tradus de AI. Costul: produsele doar cu text englezesc în OFF ajung la „necunoscut” → poză. Îmbunătățire posibilă mai târziu: cererea lui `ingredients_text_en`.
+- **Urmele de alergeni dau roșu**, ca ingredientele („orice urmă contează”), dar cu un motiv diferit afișat.
+- **Profil gol** → ecranul de rezultat cere completarea profilului, nu dă verde.
+- **Ecranul de rezultat evidențiază termenii în text**; lista împărțită pe ingrediente din wireframe așteaptă parserul de ingrediente (roadmap).
+- **Coduri de eroare noi în `api.md`**: `NOT_FOUND` (rută inexistentă) și `METHOD_NOT_ALLOWED`, ca toate erorile să aibă `code`.
+
 ### 2026-10-24: Gemini 3.6 Flash cu thinking medium
 
 - **Model: `gemini-3.6-flash`**, în loc de `gemini-3.8-flash`. 3.8 a fost lent (21-90 s pe Pringles, 69 s pe un tabel nutrițional) și a dat „high demand” (supraîncărcare). 3.6 răspunde în 5-20 s pe etichete obișnuite.
