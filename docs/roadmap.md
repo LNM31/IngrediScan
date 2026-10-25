@@ -68,7 +68,7 @@ Principiu: **skateboard → trotinetă → bicicletă → mașină**. La fiecare
 3. **Setup**: ✅ repo + structura de foldere · ✅ Expo și Spring Boot generate · ✅ `CLAUDE.md` + documentele din `docs/` · ✅ Postgres în Docker pornit și backend-ul conectat · ✅ Expo rulat pe iPhone
 4. **Implementare pe felii**: cod de bare → OFF → nume pe ecran; profil + discriminator; backend CRUD; poză + Gemini; istoric; UI final; module de afecțiuni
 5. **Testare**: teste unitare pe `evaluate` și pe adaptoare (pe fixtures)
-6. **Finalizare**: diagrame actualizate (copia curată a diagramei de flux), capturi, demo pregătit (produse testate, istoric offline, hotspot)
+6. **Finalizare**: diagrame UML (use case; **activitate** = copia curată a diagramei de flux v5, cu start / final și swimlanes; **stare** = stările unei scanări, după task-ul 07, ca să descrie ce face aplicația, nu planul), capturi, demo pregătit (produse testate, istoric offline, hotspot). De aflat de la profesor ce diagrame cere exact (clase? secvență?).
 
 ### Pași următori, în ordine
 

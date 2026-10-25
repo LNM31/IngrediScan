@@ -56,7 +56,7 @@ Nu implementa nimic din `docs/roadmap.md` dacă task-ul nu cere explicit. Nu ad�
 | `docs/api.md` | contractul API (sursa de adevăr mobile ↔ backend), când există |
 | `docs/tasks/` | un fișier per task, când există |
 | `docs/specificatie-aplicatie.md` | specificația inițială; unde diferă, câștigă `decizii.md` |
-| `docs/diagrame/`, `docs/wireframes/` | diagrama de flux v5, wireframe-ul ecranului de rezultat |
+| `docs/diagrame/`, `docs/wireframes/` | diagrama de flux v5, diagramele UML provizorii (`uml-*.excalidraw`), wireframe-ul ecranului de rezultat |
 
 ## Cum se lucrează
 

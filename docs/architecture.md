@@ -76,6 +76,8 @@ Fiecare sursă (OFF, baza proprie, Gemini pe ingrediente, Gemini pe tabelul nutr
 
 Diagrama: [diagrame/diagrama-flux-v5.png](diagrame/diagrama-flux-v5.png) (sursa editabilă: `diagrame/diagrama-flux_v5.excalidraw`). Versiunea v5 e finală. Pentru documentația de predare trebuie o copie „curată” (titlu „IngrediScan: diagrama de flux”, fără legenda neschimbat / modificat / nou și fără panoul cu ce s-a scos).
 
+**Diagrame UML provizorii** (2026-10-25, pentru prezentare; se actualizează la final): `diagrame/uml-use-case.excalidraw`, `diagrame/uml-activitate.excalidraw` (fluxul v5 în notație UML de activitate, cu swimlanes și pasul de confirmare a textului), `diagrame/uml-clase.excalidraw` (model de domeniu: `Product` / `Nutrition` / `LabelReading` din `api.md`, `NormalizedProduct`, profil / module / reguli, `Verdict` / `Finding`). Diagrama de stare se face după task-ul 07.
+
 1. Scan → (cod neidentificat → „Retry or type code manually”: *retry* înapoi la scanare, *typed code* direct la Check product DB) → **Check product DB** (backend, GET)
 2. Nu e în DB → **Client calls OFF API** → produs găsit? → Display name
 3. **Run System Discriminator** (pe telefon) pe ce date există → **Result?**

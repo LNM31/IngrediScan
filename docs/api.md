@@ -270,3 +270,4 @@ Numele e rezervat pentru tabelul nutrițional (`prompt_nutritie.txt` + `schema_n
 
 - **EAN-8**: produsele mici au uneori coduri cu 8 cifre, pe care camera le poate citi. Acum contractul acceptă doar EAN-13 (decizia inițială). Se extinde doar dacă apare un produs real cu EAN-8 în test.
 - Limitele pentru poze și timeout-urile se ajustează dacă timpii reali din aplicație ies mult peste cei din testul 2.
+- **`ingredientsSource` fără `off`**: azi un produs se salvează doar după fluxul cu poză la ingrediente, deci textul vine mereu de la `ai` sau `user`. Dacă, la nutriție, se salvează și produse cu poză **doar la tabel** (ingredientele complete din OFF), enum-ul are nevoie de `off`, sau se decide că acele produse nu se salvează. Se hotărăște când se scrie contractul pentru `/api/labels/nutrition`.
