@@ -1,9 +1,19 @@
-import { Text, View, StyleSheet } from "react-native";
+import { router } from "expo-router";
+import { Button, StyleSheet, View } from "react-native";
 
-export default function Index() {
+import { strings } from "@/strings";
+
+export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Empty</Text>
+      <Button
+        title={strings.home.scanBarcode}
+        onPress={() => router.push("/scan")}
+      />
+      <Button
+        title={strings.home.typeCode}
+        onPress={() => router.push("/manual")}
+      />
     </View>
   );
 }
@@ -13,5 +23,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    gap: 16,
   },
 });

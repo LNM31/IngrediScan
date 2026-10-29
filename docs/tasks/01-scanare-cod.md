@@ -8,7 +8,7 @@ Userul deschide aplicația în Expo Go, scanează codul de bare al unui produs (
 
 ## De citit întâi
 
-- `mobile/CLAUDE.md` (și `mobile/AGENTS.md`: documentația Expo SDK 57, nu din memorie)
+- `mobile/CLAUDE.md` (și `mobile/AGENTS.md`: documentația Expo SDK 58, nu din memorie)
 - `docs/architecture.md`, secțiunea „Fluxul”, pașii 1-2
 
 ## Ce se face
@@ -26,16 +26,16 @@ Userul deschide aplicația în Expo Go, scanează codul de bare al unui produs (
 
 ## Criterii de acceptare
 
-- [ ] `npm test` trece. Teste pentru `isValidEan13` cel puțin pe:
+- [x] `npm test` trece. Teste pentru `isValidEan13` cel puțin pe:
   - valide: `5941143028337`, `5900951310959`, `3560070272174` (din `fixtures/off/products.json`)
   - 14 cifre: `59000020012067` (codul tastat greșit din testul OFF) → invalid
   - cifra de control greșită: `5941143028338` → invalid
   - 12 cifre, șir gol, litere, spații (`"594 1143028337"`) → invalid
-- [ ] `npx expo lint` și `npx tsc --noEmit` fără erori.
-- [ ] **Pe iPhone, în Expo Go** (verificat de Lica):
-  - scanarea unui produs real afișează codul corect, o singură dată;
-  - „Type code” cu un cod valid ajunge la același ecran; cu un cod greșit arată eroarea;
-  - cu permisiunea camerei refuzată (din Settings), aplicația oferă introducerea manuală.
+- [x] `npx expo lint` și `npx tsc --noEmit` fără erori.
+- [x] **Pe iPhone, în Expo Go** (verificat de Lica):
+  - [x] scanarea unui produs real afișează codul corect, o singură dată;
+  - [x] „Type code” cu un cod valid ajunge la același ecran; cu un cod greșit arată eroarea;
+  - [x] cu permisiunea camerei refuzată (din Settings), aplicația oferă introducerea manuală.
 
 ## Fișiere implicate
 
@@ -54,5 +54,29 @@ Userul deschide aplicația în Expo Go, scanează codul de bare al unui produs (
 
 ## Capcane
 
-- API-ul camerei s-a schimbat între SDK-uri: verifică în documentația SDK 57 componenta și proprietățile pentru scanarea codurilor, nu din memorie.
+- API-ul camerei s-a schimbat între SDK-uri: verifică în documentația SDK 58 componenta și proprietățile pentru scanarea codurilor, nu din memorie.
 - Callback-ul de scanare se apelează de mai multe ori pe secundă cât codul e în cadru: fără blocare, navighezi de zece ori.
+
+## Note după implementare
+
+**Rezultat (2026-10-29):** scanarea și introducerea manuală merg pe iPhone (Expo Go, SDK 58), inclusiv cazurile de eroare la tastare și permisiunea camerei refuzată din Settings. Testele (12), lint și `tsc` trec. Toate criteriile de acceptare sunt îndeplinite.
+
+**Ce a ieșit altfel decât în plan:**
+- **Upgrade la SDK 58 în mijlocul task-ului** (vezi `decizii.md`). Codul task-ului n-a trebuit schimbat: `CameraView`, `barcodeScannerSettings`, `onBarcodeScanned`, `useCameraPermissions` sunt identice în documentația SDK 58.
+- **ESLint nu era instalat** în proiect, deci `npx expo lint` nu putea rula. S-au adăugat `eslint` + `eslint-config-expo` (dev) și `eslint.config.js` generat de Expo.
+- **TypeScript 6 nu mai încarcă automat `@types/*`**: fără `"types": ["jest"]` în `tsconfig.json`, `tsc` nu știe de `describe` / `expect`. Vezi decizia din `decizii.md`.
+- `npx expo install <pachete> -- --save-dev` a pus pachetele la `dependencies`. Varianta care merge: `npx expo install <pachete> --dev`.
+
+**Ce s-a învățat:**
+- **Typed routes**: o rută nouă în `src/app/` dă eroare la `tsc` până când tipurile din `.expo/types/` se regenerează, iar asta se întâmplă la `npx expo start`. Deci după ce adaugi un ecran, pornești o dată serverul, apoi rulezi `tsc`.
+- Blocarea scanării: un `useRef` oprește callback-urile care vin după prima citire, înainte de re-render. Doar un `useState` n-ar fi ajuns, fiindcă mai trec câteva callback-uri până la re-render.
+- Ecranul de scanare rămâne montat sub ecranul de produs (stack), așa că camera e randată doar cât ecranul e vizibil (`useIsFocused`). La revenire, `useFocusEffect` resetează blocarea, deci Back = scanare nouă.
+
+**Comportamente alese (pentru task-urile următoare):**
+- Scan / manual → produs cu `router.push`: Back de pe produs te întoarce la ecranul de unde ai venit.
+- Ecranul de produs revalidează parametrul (deep link greșit → eroare + „Go to home” cu `dismissTo("/")`). Task-ul 02 poate presupune că, după verificare, `barcode` e un EAN-13 valid.
+- Permisiunea camerei se cere automat o singură dată. După refuz: explicație + „Allow camera” (dacă iOS mai permite întrebarea) sau „Open Settings”, plus „Type code manually” mereu.
+- Câmpul manual păstrează doar cifrele (un cod lipit cu spații se curăță), iar `isValidEan13` rămâne strictă.
+
+**Rămas deschis:**
+- Plugin-ul `expo-camera` (cu mesajul de permisiune) nu e în `app.json`: în Expo Go nu are efect. Contează doar dacă apare vreodată un build propriu.
