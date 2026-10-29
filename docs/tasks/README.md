@@ -26,7 +26,7 @@ Dacă un task cere o schimbare de contract, se schimbă **întâi** `docs/api.md
 
 | # | Task | Parte | Depinde de | Stare |
 |---|---|---|---|---|
-| 01 | [Scanare cod de bare + introducere manuală](01-scanare-cod.md) | mobile | — | ⏳ |
+| 01 | [Scanare cod de bare + introducere manuală](01-scanare-cod.md) | mobile | — | ✅ |
 | 02 | [Open Food Facts → `NormalizedProduct` → numele pe ecran](02-off-adaptor.md) | mobile | 01 | ⏳ |
 | 03 | [CRUD pe `Product` + erori + token](03-backend-crud.md) | backend | — | ⏳ |
 | 04 | [Profil (alergeni) + discriminator + ecranul de rezultat](04-profil-discriminator.md) | mobile | 02 | ⏳ |

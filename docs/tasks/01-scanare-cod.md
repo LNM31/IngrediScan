@@ -1,6 +1,6 @@
 # 01 · Scanare cod de bare + introducere manuală
 
-**Parte:** mobile · **Stare:** ⏳
+**Parte:** mobile · **Stare:** ✅
 
 ## Scop
 
