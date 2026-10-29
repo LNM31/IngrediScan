@@ -73,6 +73,18 @@ Nu blochează lab-ul obligatoriu (alergeni + dietă), iar nutriția din OFF vine
 
 **Actualizare (aceeași zi):** tabelele simple au fost testate (6 produse, corecte și consistente); cazurile riscante (doar porție, preparat, tabel tăiat, sodiu) rămân pentru task-ul de nutriție.
 
+### 2026-10-29: Trecerea pe Expo SDK 58
+
+- Expo Go de pe iPhone s-a actualizat singur la SDK 58 și nu mai deschide proiecte pe SDK 57. **Expo Go din App Store suportă doar ultimul SDK**, iar fără Mac / cont Apple Developer nu există alternativă (development build). Deci **proiectul urmează SDK-ul din Expo Go**.
+- Upgrade-ul s-a făcut peste codul task-ului 01 (necomis încă): `expo install expo@~58` + versiunile cerute de `expo install --check`; lockfile-ul a trebuit regenerat (cel vechi bloca npm pe versiunile 57). Rezultat: `expo-doctor` 20/20, testele, `tsc`, lint și bundle-ul iOS trec. Majore: React Native 0.86 → 0.88, react-native-gesture-handler 2 → 3 (nefolosit direct), jest 29 → 30.
+- **Până la predare: actualizările automate din App Store oprite pe iPhone.** Un SDK nou se adoptă doar intenționat: Expo Go și proiectul se actualizează împreună, ca pas separat, cu commit separat.
+
+### 2026-10-29: Tooling în mobile (task 01)
+
+- **Teste: jest-expo**, cu fișierele `*.test.ts` lângă codul testat (ex. `src/barcode/ean13.test.ts`), nu în `src/app/` (acolo orice fișier devine rută).
+- **Lint: ESLint 9 + `eslint-config-expo`**, configul generat de Expo (`eslint.config.js`), fără reguli proprii.
+- **`"types": ["jest"]` în `tsconfig.json`**: TypeScript 6 nu mai încarcă automat pachetele `@types/*`. Orice pachet `@types/...` adăugat pe viitor trebuie trecut și în această listă, altfel `tsc` nu-l vede.
+
 ### 2026-10-24: Decizii din planificarea task-urilor 01-04
 
 - **Limba textului din OFF**: doar `ingredients_text_ro` e considerat `ro`. Textul din `ingredients_text` primește limba `unknown`, pentru că `lang` minte (fixtures: Cappuccino `lang: en` cu text în germană, Sour Cream & Onion `lang: ro` cu text în engleză). Pe limbă `unknown` verdictul nu poate fi verde, ca la textul tradus de AI. Costul: produsele doar cu text englezesc în OFF ajung la „necunoscut” → poză. Îmbunătățire posibilă mai târziu: cererea lui `ingredients_text_en`.

@@ -1,6 +1,6 @@
 # mobile/
 
-Aplicația Expo. Versiuni (din `package.json`): Expo SDK 57 (`expo ~57.0.30`), React Native 0.86.3, React 19.2.3, expo-router ~57.0.28, TypeScript ~6.0.3. React Compiler și typed routes sunt activate în `app.json`.
+Aplicația Expo. Versiuni (din `package.json`): Expo SDK 58 (`expo ~58.0.21`), React Native 0.88.1, React 19.3.0, expo-router ~58.0.28, TypeScript ~6.0.3. **SDK-ul urmează Expo Go din App Store** (suportă doar ultimul SDK), vezi `docs/decizii.md`. React Compiler și typed routes sunt activate în `app.json`.
 
 @AGENTS.md
 

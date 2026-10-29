@@ -7,7 +7,7 @@ Mediu: Fedora + VS Code, doar iPhone (fără Mac, fără Android) → aplicația
 ## Structura
 
 ```
-mobile/    Expo (SDK 57, React Native 0.86, TypeScript), expo-router în src/app/   → vezi mobile/CLAUDE.md
+mobile/    Expo (SDK 58, React Native 0.88, TypeScript), expo-router în src/app/   → vezi mobile/CLAUDE.md
 backend/   Spring Boot 4.1, Java 21, pachet ro.upt.ingrediscan; prompturi Gemini în src/main/resources/gemini/   → vezi backend/CLAUDE.md
 docs/      documentația (lista mai jos)
 fixtures/  off/products.json (19 răspunsuri OFF reale), gemini/ (rezultatele testului Gemini); date pentru teste
