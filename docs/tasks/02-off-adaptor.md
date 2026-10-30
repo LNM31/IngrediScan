@@ -1,6 +1,6 @@
 # 02 · Open Food Facts → `NormalizedProduct` → numele pe ecran
 
-**Parte:** mobile · **Depinde de:** 01 · **Stare:** ⏳
+**Parte:** mobile · **Depinde de:** 01 · **Stare:** ✅
 
 ## Scop
 
