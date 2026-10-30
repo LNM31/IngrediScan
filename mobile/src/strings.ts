@@ -38,5 +38,11 @@ export const strings = {
     title: "Product",
     barcodeLabel: "Barcode",
     invalidBarcode: "This link does not contain a valid EAN-13 barcode.",
+    loading: "Looking up the product…",
+    notFound: "Product not found",
+    loadError: "Couldn't load product data",
+    noName: "Unnamed product",
+    imageLabel: "Product photo",
+    scanAnother: "Scan another",
   },
 } as const;
