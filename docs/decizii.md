@@ -85,6 +85,13 @@ Nu blochează lab-ul obligatoriu (alergeni + dietă), iar nutriția din OFF vine
 - **Lint: ESLint 9 + `eslint-config-expo`**, configul generat de Expo (`eslint.config.js`), fără reguli proprii.
 - **`"types": ["jest"]` în `tsconfig.json`**: TypeScript 6 nu mai încarcă automat pachetele `@types/*`. Orice pachet `@types/...` adăugat pe viitor trebuie trecut și în această listă, altfel `tsc` nu-l vede.
 
+### 2026-10-30: Clientul și adaptorul Open Food Facts (task 02)
+
+- **Răspunsul OFF are patru rezultate**: găsit, negăsit, eroare de rețea, date corupte. HTTP 404 cu `result.id: product_not_found` înseamnă negăsit (OFF răspunde așa la coduri inexistente); orice alt status în afară de 200 / 404 (429, 5xx) e tratat ca eroare de rețea.
+- **`schema_version` se verifică în `product`** (vine acolo, fiind cerut în `fields`), doar la produs găsit.
+- **`brand` = textul `brands` întreg**, fără alegerea primului brand: e doar pentru afișare (lecția 7).
+- **Lista albă a celor 14 tag-uri** stă în `src/adapters/off.ts` (`OFF_ALLERGEN_TAGS`); potrivire exactă, tag-urile stricate nu se repară.
+
 ### 2026-10-24: Decizii din planificarea task-urilor 01-04
 
 - **Limba textului din OFF**: doar `ingredients_text_ro` e considerat `ro`. Textul din `ingredients_text` primește limba `unknown`, pentru că `lang` minte (fixtures: Cappuccino `lang: en` cu text în germană, Sour Cream & Onion `lang: ro` cu text în engleză). Pe limbă `unknown` verdictul nu poate fi verde, ca la textul tradus de AI. Costul: produsele doar cu text englezesc în OFF ajung la „necunoscut” → poză. Îmbunătățire posibilă mai târziu: cererea lui `ingredients_text_en`.
